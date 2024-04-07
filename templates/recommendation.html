@@ -8,6 +8,22 @@
     <body>
         <h1>Recommendation Page</h1>
 
+        <form>
+            <input type="range" min="1", max="100", value="50", class="slider", id = "attr1">
+            <input type="range" min="1", max="100", value="50", class="slider", id = "attr2">
+            <input type="range" min="1", max="100", value="50", class="slider", id = "attr3">
+            <input type="range" min="1", max="100", value="50", class="slider", id = "attr4">
+            <input type="range" min="1", max="100", value="50", class="slider", id = "attr5">
+            
+            <input type="checkbox" id="select1">
+            <input type="checkbox" id ="select2">
+            <input type="checkbox" id ="select2">
+            <input type="checkbox" id ="select2">
+            <a href="{{url_for("home")}}">Home</a>
+
+            <input type="submit">
+        </form>
+
     </body>
 
 </html>
