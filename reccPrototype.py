@@ -1,5 +1,6 @@
 # SFHACKS2024 Project
 # Reccomender Prototype
+import pandas as pd
 
 # TODO Input using csv files
 # TODO Max attributes: 5
@@ -52,11 +53,24 @@ def findRecc():
 
     print("User:", user.name)
     print("Reccomended Location:", reccLocation)
+    
+def load_locations_from_csv(csvfile):
+    locations = []
+    csv_df = pd.read_csv(csvfile)
+    for x in range(0, len(csv_df)):
+        row = csv_df.iloc[x].tolist()
+        name = row[0]
+        attributes = row[1:6]
+        locations.append(Location(name, attributes))
+    return locations
 
 def main():
 
-    setData()
-    findRecc()
+    # setData()
+    # findRecc()
+    
+    a = load_locations_from_csv("locations.csv")
+    print([b.attributes for b in a ])
 
 
     
