@@ -2,17 +2,21 @@
 <html lang="en">
     <header>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
-        <title>Index Page</title>
+        <title>About Page</title>
     </header>
-    
+
     <body>
         <nav>
             <a href="{{ url_for('home') }}" class="logo">CityMeetsMe</a>
             <a href="{{ url_for('recommendation')}}">Recommendation</a>
-            <a href="{{ url_for('review')}}">Review</a>
-            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('review') }}">Review</a>
+            <a href="{{ url_for('about') }}" class="active">About</a>
         </nav>
-        
+
+        <section class = "content">
+            <h1> About Page </h1>
+            <hr />
+        </section>
 
     </body>
 
