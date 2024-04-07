@@ -1,21 +1,20 @@
-from reads import Person, Location
+from reads import Person, Location, load_locations_from_csv, load_user_from_csv
 
-tmp_user = Person("Person1", [0.30, 0.15, 0.40])
+tmp_user : Person
 tmp_locationList = []
 
 locNameList = []
 scoreList = []
 
 # End List of Locations example
-# [name, ext1, ext2, ext3, ext4, ext5, attr1, attr2, attr3]
+# [name, ext1, ext2, ext3, attr1, attr2, attr3]
 
 def setData():
-
-    tmp_locationList.append(Location("Location1", [0,0,0,0,0,0.20, 0.20, 0.65]))
-    tmp_locationList.append(Location("Location2", [0,0,0,0,0,0.50, 0.70, 0.80]))
-    tmp_locationList.append(Location("Location3", [0,0,0,0,0,0.45, 0.60, 0.90]))
-    tmp_locationList.append(Location("Location4", [0,0,0,0,0,0.25, 0.45, 0.20]))
-    tmp_locationList.append(Location("Location5", [0,0,0,0,0,0.75, 0.30, 0.45]))
+    
+    global tmp_locationList
+    tmp_locationList = load_locations_from_csv("locations.csv")
+    global tmp_user
+    tmp_user = load_user_from_csv("user.csv")
 
 # Using given user and list of locations calculate score for each location
 def findRecc():
@@ -24,8 +23,8 @@ def findRecc():
 
     for loc in tmp_locationList:
         for x in range(0,3):
-            tmpDiff += round(abs(tmp_user.preferences[x]- loc.attributes[x + 5]),2)
-        scoreList.append(tmpDiff)
+            tmpDiff += abs(float(tmp_user.preferences[x]) - float(loc.attributes[x]))
+        scoreList.append(round(tmpDiff,2))
         tmpDiff = 0
 
 def outputRecc():
@@ -35,10 +34,12 @@ def outputRecc():
     reccList.sort(key= lambda a: a[1])
 
     print("End: ", reccList)
+    return reccList
 
 def main():
+    
     setData()
     findRecc()
-    outputRecc()
+    return outputRecc()
 
 main()

@@ -51,7 +51,6 @@ def save_person_to_csv(person, csvfile: str):
 
 def main():
 
-    
     loc = load_locations_from_csv("locations.csv")
     user = load_user_from_csv("user.csv")
     for x in loc:
