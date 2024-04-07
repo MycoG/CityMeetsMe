@@ -29,7 +29,7 @@ def findRecc():
 
 def outputRecc():
     for y in range(len(tmp_locationList)):
-        locNameList.append(tmp_locationList[y].name)
+        locNameList.append(tmp_locationList[y])
     reccList = list(zip(locNameList, scoreList))
     reccList.sort(key= lambda a: a[1])
 
