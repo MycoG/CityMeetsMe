@@ -53,8 +53,16 @@
                 <div class="recommendation">
                     <div class="rec-inner"> 
 
-                        <h1> {{tup[0].name}} </h1>
-                        </p>Score: {{tup[1]}}</p>
+                        <div class="rec-info"> 
+
+                            <h1> {{tup[0].name}} </h1>
+                            </p>Score: {{tup[1]}}</p>
+                        </div>
+                        
+                        <div>
+                            <img src="{{ url_for('static',filename='img/ikes.png')}}"/>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100980.5538763586!2d-122.62093255664061!3d37.72807300000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7db3d831cb0f%3A0x8e46af0fb8f046ae!2sIke&#39;s%20Love%20%26%20Sandwiches!5e0!3m2!1sen!2sus!4v1712563628898!5m2!1sen!2sus" width="100" height="100" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
                     </div>
                 </div>
             {% endfor %}

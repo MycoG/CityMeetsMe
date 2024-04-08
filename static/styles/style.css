@@ -102,6 +102,28 @@ nav a:hover {
 .rec-inner {
     margin-left: 20px;
     margin-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-content: baseline;
+    height: 100%;
+}
+
+.rec-inner iframe {
+    height:auto;
+    width: 150px;
+    height: 90%;
+    margin-top: 10px;
+}
+
+.rec-inner img {
+    width: 150px;
+    object-fit: cover;
+    height: 90%;
+    margin-top: 10px;
+}
+
+.rec-info {
+
 }
 
 .pref-form {
