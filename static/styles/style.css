@@ -179,3 +179,26 @@ nav a:hover {
 .pref-form {
     margin-bottom: 30px;
 }
+
+.button-container {
+    border: dashed;
+    border-width: 1px;
+    padding: 15px;
+}
+
+.top-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 15px;
+}
+
+.bot-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.pick {
+    border: solid;
+    border-width: 1px;
+    padding: 1px;
+}
