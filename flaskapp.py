@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template, url_for
+from formula import setData, findRecc, outputRecc
 
 app = Flask(__name__)
 
@@ -18,6 +19,7 @@ def recommendation():
         else:
             #reset the template
             return render_template("recommendation.html", val1=0.5, val2=0.5, val3=0.5)
+    return render_template("recommendation.html", val1=0.5, val2=0.5, val3=0.5)
 
 @app.route("/review")
 def review():
