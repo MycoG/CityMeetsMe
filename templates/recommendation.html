@@ -15,29 +15,29 @@
         </nav>
         
         <section class = "content">
-            <h1>Recommendation Page</h1>
-            <hr />
 
-            <form method="POST" action="{{url_for('recommendation')}}">
+            <form class="pref-form" method="POST" action="{{url_for('recommendation')}}">
                 <fieldset> 
+                    <legend>Enter your preferences!</legend>
 
                     <div class="slide-container"> 
 
                         <div class = "slidebar"> 
-                            <p>Attribute A</p>
+                            <p>Food Quality</p>
                             <input type="range" min="0.0" max="1.0" value="{{val1}}" class="slider" name="attr1" step="0.1">
-                            <p>Attribute B</p>
+                            <p>Food Quantity</p>
                         </div>
                         <div class = "slidebar"> 
-                            <p>Attribute A</p>
+                            <p>Social Environment</p>
                             <input type="range" min="0.0" max="1.0" value="{{val2}}" class="slider" name="attr2" step="0.1">
-                            <p>Attribute B</p>
+                            <p>Quiet Environment</p>
                         </div>
                         <div class = "slidebar"> 
                             <p>Attribute A</p>
                             <input type="range" min="0.0" max="1.0" value="{{val3}}" class="slider" name="attr3" step="0.1">
                             <p>Attribute B</p>
                         </div>
+                        
 
                         
                     </div>
@@ -49,7 +49,15 @@
 
             </form>
 
-            
+            {%for tup in locs%}
+                <div class="recommendation">
+                    <div class="rec-inner"> 
+
+                        <h1> {{tup[0].name}} </h1>
+                        </p>Score: {{tup[1]}}</p>
+                    </div>
+                </div>
+            {% endfor %}
 
     </body>
 

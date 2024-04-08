@@ -9,12 +9,18 @@ class Person:
     def __init__(self, name, preferences):
         self.name = name
         self.preferences = preferences
+        
+    def __repr__(self):
+        return "Person object: " + self.name
 
 class Location:
     def __init__(self, name, exts, attributes):
         self.name = name
         self.exts = exts
         self.attributes = attributes
+        
+    def __repr__(self):
+        return "Location object: " + self.name
 
 user : Person
 locationList = []

@@ -1,6 +1,5 @@
 from flask import Flask, request, render_template, url_for
-from formula import setData, findRecc, outputRecc
-
+from formula import get_recommendations
 app = Flask(__name__)
 
 @app.route("/")
@@ -14,12 +13,13 @@ def recommendation():
             a = request.values.get('attr1')
             b = request.values.get('attr2')
             c = request.values.get('attr3')
-            print(a, b, c)
-            return render_template("recommendation.html", val1=a, val2=b, val3=c)
+            reccs = get_recommendations(a,b,c)
+            # print(get_recommendations(a, b, c))
+            return render_template("recommendation.html", val1=a, val2=b, val3=c, locs=reccs)
         else:
             #reset the template
-            return render_template("recommendation.html", val1=0.5, val2=0.5, val3=0.5)
-    return render_template("recommendation.html", val1=0.5, val2=0.5, val3=0.5)
+            return render_template("recommendation.html", val1=0.5, val2=0.5, val3=0.5, locs=[])
+    return render_template("recommendation.html", val1=0.5, val2=0.5, val3=0.5, locs=[])
 
 @app.route("/review")
 def review():
