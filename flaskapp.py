@@ -6,9 +6,18 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-@app.route("/recommendation")
+@app.route("/recommendation", methods=["GET","POST"])
 def recommendation():
-    return render_template("recommendation.html")
+    if request.method == "POST":
+        if request.form['submit'] != "reset":
+            a = request.values.get('attr1')
+            b = request.values.get('attr2')
+            c = request.values.get('attr3')
+            print(a, b, c)
+            return render_template("recommendation.html", val1=a, val2=b, val3=c)
+        else:
+            #reset the template
+            return render_template("recommendation.html", val1=0.5, val2=0.5, val3=0.5)
 
 @app.route("/review")
 def review():

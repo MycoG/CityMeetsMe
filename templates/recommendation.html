@@ -9,26 +9,42 @@
     <body>
         <nav>
             <a href="{{ url_for('home') }}" class="logo">CityMeetsMe</a>
-            <a href="{{ url_for('recommendation')}}" class="active">Recommendation</a>
-            <a href="{{ url_for('review')}}">Review</a>
-            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('about') }}" class="active">About</a>
+            <a href="{{ url_for('review') }}">Review</a>
+            <a href="{{ url_for('recommendation')}}">Recommendation</a>
         </nav>
         
         <section class = "content">
             <h1>Recommendation Page</h1>
             <hr />
 
-            <form>
+            <form method="POST" action="{{url_for('recommendation')}}">
                 <fieldset> 
 
-                    <div> 
-                        <p>Attribute A</p>
-                        <input type="range" min="1", max="100", value="50", class="slider", id = "attr1">
-                        <p>Attribute B</p>
+                    <div class="slide-container"> 
+
+                        <div class = "slidebar"> 
+                            <p>Attribute A</p>
+                            <input type="range" min="0.0" max="1.0" value="{{val1}}" class="slider" name="attr1" step="0.1">
+                            <p>Attribute B</p>
+                        </div>
+                        <div class = "slidebar"> 
+                            <p>Attribute A</p>
+                            <input type="range" min="0.0" max="1.0" value="{{val2}}" class="slider" name="attr2" step="0.1">
+                            <p>Attribute B</p>
+                        </div>
+                        <div class = "slidebar"> 
+                            <p>Attribute A</p>
+                            <input type="range" min="0.0" max="1.0" value="{{val3}}" class="slider" name="attr3" step="0.1">
+                            <p>Attribute B</p>
+                        </div>
+
+                        
                     </div>
-                    
-                    <input type="submit">
+                    <input type="submit" name="submit" value="submit">
+                    <input type="submit" name="submit" value = "reset">
                 </fieldset>
+
             </form>
 
     </body>

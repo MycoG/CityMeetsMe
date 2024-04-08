@@ -60,3 +60,27 @@ nav a:hover {
     margin: auto;
     margin-top: 5%;
 }
+
+.slide-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.slidebar {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+}
+.slidebar p{
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.slider {
+    width: 70%;
+    height: 15px;
+
+}
