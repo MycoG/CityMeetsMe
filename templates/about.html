@@ -7,7 +7,9 @@
 
     <body>
         <nav>
-            <a href="{{ url_for('home') }}" class="logo">CityMeetsMe</a>
+            <a href="{{ url_for('home') }}" class="logo">
+                <img src=" {{url_for('static', filename='favicon.ico')}} ">
+            </a>
             <a href="{{ url_for('about') }}" class="active">About</a>
             <a href="{{ url_for('review') }}">Review</a>
             <a href="{{ url_for('recommendation')}}">Recommendation</a>
