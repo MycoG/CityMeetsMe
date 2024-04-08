@@ -10,5 +10,9 @@ def home():
 def recommendation():
     return render_template("recommendation.html")
 
+@app.route("/review")
+def review():
+    return render_template("review.html")
+
 if __name__ == "__main__":
     app.run()

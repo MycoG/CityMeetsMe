@@ -1,0 +1,14 @@
+
+* {
+    box-sizing: border-box;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+nav {
+    overflow: hidden;
+}
+
+nav a {
+    float: left;
+    display: block
+}

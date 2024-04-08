@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
     <header>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
         <title>Index Page</title>
     </header>
 
     <body>
-        <h1>Hello World</h1>
-        <a href="{{url_for('recommendation')}}">Recommendation</a>
+        <nav>
+
+            <ul> 
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{url_for('recommendation')}}">Recommendation</a></li>
+                <li><a href="{{ url_for('review')}}">Review</a></li>
+            </ul>
+        </nav>
+
+        <h1>SafetyNet</h1>
 
     </body>
 
