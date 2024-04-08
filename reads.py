@@ -11,8 +11,9 @@ class Person:
         self.preferences = preferences
 
 class Location:
-    def __init__(self, name, attributes):
+    def __init__(self, name, exts, attributes):
         self.name = name
+        self.exts = exts
         self.attributes = attributes
 
 user : Person
@@ -26,9 +27,9 @@ def load_locations_from_csv(csvfile):
         for line in f.readlines()[1:]:
             line = line.strip().split(",")
             name = line[0]
-            exts = line[1:6]
-            attrs = line[6:9]
-            locations.append(Location(name, attrs))
+            exts = line[1:4]
+            attrs = line[4:7]
+            locations.append(Location(name, exts, attrs))
     return locations
 
 def load_user_from_csv(csvfile):
@@ -42,7 +43,7 @@ def load_user_from_csv(csvfile):
 def save_locations_to_csv(locations, csvfile: str):
     with open(csvfile, "w") as f:
         for loc in locations:
-            f.write(",".join([loc.name] + [str(a) for a in loc.attributes])+"\n")
+            f.write(",".join([loc.name] + [str(a) for a in loc.exts] + [str(a) for a in loc.attributes])+"\n")
 
 def save_person_to_csv(person, csvfile: str):
     with open(csvfile, "w") as f:
@@ -50,13 +51,13 @@ def save_person_to_csv(person, csvfile: str):
 
 def main():
 
-    # setData()
-    # findRecc()
     
     loc = load_locations_from_csv("locations.csv")
     user = load_user_from_csv("user.csv")
-    print(loc[0].name)
-    print(loc[0].attributes)
+    for x in loc:
+        print(x.name)
+        print(x.exts)
+        print(x.attributes)
     print(user.name)
     print(user.preferences)
 
