@@ -1,7 +1,12 @@
 
+
 * {
     box-sizing: border-box;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    font-family:"Raleway",'Gill Sans', 'Gill Sans MT', "Calibri", 'Trebuchet MS', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 20px;
+    font-style: normal;
+    word-spacing: 5px;
 }
 
 body {
@@ -40,7 +45,7 @@ nav a {
 
 nav a:hover {
     background-color: rgb(202, 202, 202);
-    transform: translateY(-5);
+    transform: translateY(2px);
     
 }
 
@@ -63,9 +68,9 @@ nav a:hover {
 }
 
 .content {
-    width: 90vw;
+    width: 85vw;
     margin: auto;
-    margin-top: 10vh;
+    margin-top: 5vh;
 }
 
 .slide-container {
@@ -98,8 +103,8 @@ nav a:hover {
     border-color: black;
     border-width: 2px;
     border-radius: 10px;
-    border-bottom-width: 3px;
-    border-left-width: 3px;
+    border-bottom-width: 6px;
+    border-left-width: 6px;
     background-color: rgb(70, 70, 70);
     color: white;
     margin: 10px;
@@ -137,15 +142,6 @@ nav a:hover {
     width: 95%;
 }
 
-.rec-button button {
-    width: 90%;
-    padding: 5px;
-    margin: 2px;
-    border-radius: 20px;
-    border-color: white;
-    color: white;
-    background-color: black;
-}
 
 .rec-text {
     display: flex;
@@ -167,14 +163,21 @@ nav a:hover {
 .rec-button {
     display: flex;
     flex-direction: column;
-    padding: 30px;
+    margin: auto;
+    margin-right: 30px;
     align-items: baseline;
 }
+
 .rec-button button {
+    width: 90%;
+    margin: 2px;
+    border-radius: 10px;
+    border-color: white;
+    color: white;
+    background-color: black;
     width: 200px;
     padding: 10px;
 }
-
 
 .pref-form {
     margin-bottom: 30px;
