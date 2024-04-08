@@ -7,26 +7,29 @@
     </header>
 
     <body>
-        <a href="{{url_for("home")}}">Home</a>
-        <a href="{{url_for('recommendation')}}">Recommendation</a>
-        <a href="{{ url_for('review')}}">Review</a>
+        <nav>
+            <a href="{{ url_for('home') }}" class="logo">CityMeetsMe</a>
+            <a href="{{ url_for('recommendation')}}" class="active">Recommendation</a>
+            <a href="{{ url_for('review')}}">Review</a>
+            <a href="{{ url_for('about') }}">About</a>
+        </nav>
         
-        <h1>Recommendation Page</h1>
+        <section class = "content">
+            <h1>Recommendation Page</h1>
+            <hr />
 
-        <form>
-            <input type="range" min="1", max="100", value="50", class="slider", id = "attr1">
-            <input type="range" min="1", max="100", value="50", class="slider", id = "attr2">
-            <input type="range" min="1", max="100", value="50", class="slider", id = "attr3">
-            <input type="range" min="1", max="100", value="50", class="slider", id = "attr4">
-            <input type="range" min="1", max="100", value="50", class="slider", id = "attr5">
-            
-            <input type="checkbox" id="select1">
-            <input type="checkbox" id ="select2">
-            <input type="checkbox" id ="select2">
-            <input type="checkbox" id ="select2">
+            <form>
+                <fieldset> 
 
-            <input type="submit">
-        </form>
+                    <div> 
+                        <p>Attribute A</p>
+                        <input type="range" min="1", max="100", value="50", class="slider", id = "attr1">
+                        <p>Attribute B</p>
+                    </div>
+                    
+                    <input type="submit">
+                </fieldset>
+            </form>
 
     </body>
 
