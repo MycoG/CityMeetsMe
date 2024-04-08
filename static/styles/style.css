@@ -127,6 +127,9 @@ nav a:hover {
     width: 150px;
     height: 90%;
     margin-top: 10px;
+    border: solid;
+    border-radius: 10px;
+    border-width: 3px;
 }
 
 .rec-inner img {
@@ -134,6 +137,9 @@ nav a:hover {
     object-fit: cover;
     height: 90%;
     margin-top: 10px;
+    border: solid;
+    border-radius: 10px;
+    border-width: 3px;
 }
 
 .rec-inner {
@@ -152,6 +158,10 @@ nav a:hover {
     padding: 0;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+.rec-text p {
+    padding: 6px;
+    margin: 0;
 }
 
 .rec-right {

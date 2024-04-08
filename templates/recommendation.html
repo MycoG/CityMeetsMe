@@ -38,9 +38,9 @@
                             <p>Quiet Environment</p>
                         </div>
                         <div class = "slidebar"> 
-                            <p>Attribute A</p>
+                            <p>Traditional</p>
                             <input type="range" min="0.0" max="1.0" value="{{val3}}" class="slider" name="attr3" step="0.1">
-                            <p>Attribute B</p>
+                            <p>Fusion</p>
                         </div>
                         
 
@@ -63,10 +63,10 @@
                         <div class="rec-text">
                             <h1> {{tup[0].name}} </h1>
 
-                                    <p>Score: {{ (1/(tup[1]+1)) | round(2, 'floor')}}</p>
-                                    <p>Safety:</p>
-                                    <p>Sanitary: </p>
-                                    <p>Service</p>
+                                    <p>Score: {{ (1/(tup[1]+1)*100) | round(1, 'floor')}}%</p>
+                                    <p>Safety: _%</p>
+                                    <p>Sanitary: _%</p>
+                                    <p>Service: _%</p>
                                 
                         </div>
                         
